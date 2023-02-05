@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var appState: AppState
     @StateObject var vm = LoginViewModel()
     
-    @State private var isSecure = false
+    @State private var isSecure = true
     
     var body: some View {
         NavigationStack {
@@ -58,7 +59,9 @@ struct LoginView: View {
                     
                     VStack(spacing: 18) {
                         Button {
-                            // login
+                            withAnimation {
+                                appState.updateAuthorization(with: true)
+                            }
                         } label: {
                             Text("Login")
                                 .padding(5)
@@ -67,7 +70,7 @@ struct LoginView: View {
                         .buttonStyle(.borderedProminent)
                         
                         NavigationLink {
-                            RegisterView()
+                            RegisterView(vm: vm)
                         } label: {
                             Text("Register")
                                 .padding(5)
@@ -87,5 +90,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(AppState())
     }
 }

@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct ArchitecturesSwiftUIApp: App {
+    @StateObject var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            ZStack {
+                NavigationStack {
+                    if appState.isAuthorized {
+                        HomeView()
+                    } else {
+                        LoginView()
+                    }
+                }
+            }
+            .environmentObject(appState)
         }
     }
 }
