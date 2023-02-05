@@ -9,4 +9,8 @@ import Foundation
 
 class LoginViewModel: ObservableObject {
     @Published var credentials = Credentials()
+    
+    init() { }
+    
+    
 }
