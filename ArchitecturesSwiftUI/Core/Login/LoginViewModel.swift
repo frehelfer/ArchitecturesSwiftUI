@@ -29,6 +29,7 @@ class LoginViewModel: ObservableObject {
             switch result {
             case .success(_):
                 completionHandler(true)
+                self?.credentials = Credentials()
                 
             case .failure(let error):
                 self?.error = error.localizedDescription
@@ -54,6 +55,7 @@ class LoginViewModel: ObservableObject {
             switch result {
             case .success(_):
                 completionHandler(true)
+                self?.credentials = Credentials()
                 
             case .failure(let error):
                 self?.error = error.localizedDescription

@@ -13,14 +13,31 @@ struct PersonView: View {
     var body: some View {
         ZStack {
             Color.gray.opacity(0.2).ignoresSafeArea()
+            
             ScrollView {
-                VStack {
+                VStack(alignment: .center, spacing: 10) {
                     ImageView(person: person)
-                        .frame(width: .infinity, height: 400)
+                        .frame(height: 300)
+                        .overlay {
+                            Rectangle()
+                                .strokeBorder(.primary.opacity(0.1), lineWidth: 15)
+                        }
                     
-                    Text(person.details)
-                    Spacer()
+                    VStack(alignment: .leading, spacing: 10) {
+                        
+                        Text(person.bio)
+                        Text(person.details)
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("**Experience:** ^[\(person.experience) years](inflect: true)")
+                            Text("**Rate:** $\(person.rate)")
+                            Text(.init("**Contact:** \(person.email)"))
+                            
+                        }
+                        .padding(.top, 20)
+                    }
                 }
+                .padding(20)
             }
         }
         .navigationTitle(person.displayName)
