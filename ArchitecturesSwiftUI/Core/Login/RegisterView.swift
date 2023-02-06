@@ -58,11 +58,11 @@ struct RegisterView: View {
                     
                     HStack {
                         if isSecure {
-                            SecureField("Enter your password again", text: $vm.credentials.confirmPassword)
+                            SecureField("Enter the same password again", text: $vm.credentials.confirmPassword)
                                 .frame(height: 22)
                             
                         } else {
-                            TextField("Enter your password again", text: $vm.credentials.confirmPassword)
+                            TextField("Enter the same password again", text: $vm.credentials.confirmPassword)
                         }
                         
                         Button {
@@ -77,19 +77,29 @@ struct RegisterView: View {
                 }
                 .padding(.bottom, 40)
                 
+                Spacer()
                 
                 VStack(spacing: 18) {
-                    Button {
+                    if vm.showProgressView {
+                        ProgressView()
+                            .padding(12)
                         
-                    } label: {
-                        Text("Register")
-                            .padding(5)
-                            .frame(maxWidth: .infinity)
+                    } else {
+                        
+                        Button {
+                            withAnimation {
+                                vm.createUser { result in
+                                    appState.updateAuthorization(with: result)
+                                }
+                            }
+                        } label: {
+                            Text("Login")
+                                .padding(5)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
-                    .buttonStyle(.borderedProminent)
                 }
-                Spacer()
-                Spacer()
             }
             .padding(20)
 

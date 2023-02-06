@@ -24,12 +24,12 @@ struct ArchitecturesSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                NavigationStack {
-                    if appState.isAuthorized {
-                        HomeView()
-                    } else {
-                        LoginView()
-                    }
+                if appState.isAuthorized {
+                    HomeView()
+                        .transition(AnyTransition.slide.animation(.easeInOut))
+                } else {
+                    LoginView()
+                        .transition(AnyTransition.opacity.animation(.easeInOut))
                 }
             }
             .environmentObject(appState)

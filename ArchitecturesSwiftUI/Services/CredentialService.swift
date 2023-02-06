@@ -17,7 +17,7 @@ class CredentialService: ObservableObject {
     
     // MARK: - Actions
     
-    public func singIn(user: Credentials, completionHandler: @escaping(Result<Credentials, Error>) -> ()) {
+    public func signIn(user: Credentials, completionHandler: @escaping(Result<Credentials, Error>) -> ()) {
         auth.signIn(withEmail: user.email, password: user.password) { _, error in
             if let error {
                 completionHandler(.failure(error))

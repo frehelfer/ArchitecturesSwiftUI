@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var appState: AppState
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack {
+                Color.gray.opacity(0.2).ignoresSafeArea()
+                
+                VStack {
+                    
+                }
+            }
+            .navigationTitle("HomeView")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        withAnimation(.easeInOut) {
+                            appState.updateAuthorization(with: false)
+                        }
+                    } label: {
+                        Label("Logout", systemImage: "rectangle.portrait.and.arrow.right")
+                            .labelStyle(.iconOnly)
+                    }
+                }
+            }
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AppState())
     }
 }

@@ -56,18 +56,28 @@ struct LoginView: View {
                     }
                     .padding(.bottom, 30)
                     
+                    Spacer()
                     
                     VStack(spacing: 18) {
-                        Button {
-                            withAnimation {
-                                appState.updateAuthorization(with: true)
+                        if vm.showProgressView {
+                            ProgressView()
+                                .padding(12)
+                            
+                        } else {
+                            
+                            Button {
+                                withAnimation(.easeInOut) {
+                                    vm.signIn { result in
+                                        appState.updateAuthorization(with: result)
+                                    }
+                                }
+                            } label: {
+                                Text("Login")
+                                    .padding(5)
+                                    .frame(maxWidth: .infinity)
                             }
-                        } label: {
-                            Text("Login")
-                                .padding(5)
-                                .frame(maxWidth: .infinity)
+                            .buttonStyle(.borderedProminent)
                         }
-                        .buttonStyle(.borderedProminent)
                         
                         NavigationLink {
                             RegisterView(vm: vm)
@@ -78,11 +88,12 @@ struct LoginView: View {
                         }
                         .buttonStyle(.bordered)
                     }
-                    Spacer()
-                    Spacer()
                 }
                 .padding(20)
             }
+        }
+        .alert(vm.error ?? "", isPresented: $vm.presentError) {
+            Button("OK") { }
         }
     }
 }
