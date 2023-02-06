@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class CredentialService: ObservableObject {
+class CredentialService {
     
     private var auth = Auth.auth()
     

@@ -12,7 +12,7 @@ struct PersonRow: View {
     
     var body: some View {
         HStack {
-            AsyncImage(url: person.thumbnail, scale: 3)
+            ImageView(person: person)
                 .frame(width: 60, height: 60)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             VStack(alignment: .leading) {

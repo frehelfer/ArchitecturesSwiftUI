@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PersonService: ObservableObject {
+class PersonService {
     @Published var allPersons: [Person] = []
     
     init() {

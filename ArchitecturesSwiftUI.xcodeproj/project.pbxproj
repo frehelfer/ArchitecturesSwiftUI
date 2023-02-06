@@ -25,9 +25,12 @@
 		8D64751D2991397300B74EAF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64751C2991397300B74EAF /* HomeViewModel.swift */; };
 		8D64751F29913A1300B74EAF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64751E29913A1300B74EAF /* Person.swift */; };
 		8D64752129913A4300B74EAF /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64752029913A4300B74EAF /* PersonService.swift */; };
-		8D64752529913BCD00B74EAF /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64752429913BCD00B74EAF /* NetworkingManager.swift */; };
 		8D6475272991500300B74EAF /* PersonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6475262991500300B74EAF /* PersonRow.swift */; };
 		8D647529299153DA00B74EAF /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D647528299153DA00B74EAF /* PersonView.swift */; };
+		8D64752C299185D000B74EAF /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64752B299185D000B74EAF /* ImageService.swift */; };
+		8D647530299195C000B74EAF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64752F299195C000B74EAF /* ImageView.swift */; };
+		8D647532299195CB00B74EAF /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D647531299195CB00B74EAF /* ImageViewModel.swift */; };
+		8D6475352991992D00B74EAF /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6475342991992D00B74EAF /* LocalFileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +51,12 @@
 		8D64751C2991397300B74EAF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8D64751E29913A1300B74EAF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		8D64752029913A4300B74EAF /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
-		8D64752429913BCD00B74EAF /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		8D6475262991500300B74EAF /* PersonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRow.swift; sourceTree = "<group>"; };
 		8D647528299153DA00B74EAF /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		8D64752B299185D000B74EAF /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		8D64752F299195C000B74EAF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		8D647531299195CB00B74EAF /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		8D6475342991992D00B74EAF /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 		8D0228DC298FEDAC00952ED5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8D64752D299195A900B74EAF /* Components */,
 				8D0228DE298FEDB200952ED5 /* Login */,
 				8D0228DD298FEDAF00952ED5 /* Home */,
 			);
@@ -160,6 +167,7 @@
 			children = (
 				8D64751029901EC300B74EAF /* CredentialService.swift */,
 				8D64752029913A4300B74EAF /* PersonService.swift */,
+				8D64752B299185D000B74EAF /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,9 +183,26 @@
 		8D64752329913BC100B74EAF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8D64752429913BCD00B74EAF /* NetworkingManager.swift */,
+				8D6475342991992D00B74EAF /* LocalFileManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8D64752D299195A900B74EAF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8D64752E299195B000B74EAF /* Image */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8D64752E299195B000B74EAF /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				8D64752F299195C000B74EAF /* ImageView.swift */,
+				8D647531299195CB00B74EAF /* ImageViewModel.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +289,8 @@
 				8D0228E2298FEDBF00952ED5 /* RegisterView.swift in Sources */,
 				8D6475272991500300B74EAF /* PersonRow.swift in Sources */,
 				8D64750E29901C1E00B74EAF /* AppState.swift in Sources */,
+				8D6475352991992D00B74EAF /* LocalFileManager.swift in Sources */,
+				8D647530299195C000B74EAF /* ImageView.swift in Sources */,
 				8D0228E4298FEDC700952ED5 /* HomeView.swift in Sources */,
 				8D64751F29913A1300B74EAF /* Person.swift in Sources */,
 				8D0228E0298FEDB900952ED5 /* LoginView.swift in Sources */,
@@ -271,9 +298,10 @@
 				8D64751B299138B200B74EAF /* UIAplication+.swift in Sources */,
 				8D64752129913A4300B74EAF /* PersonService.swift in Sources */,
 				8D0228E6298FEF3200952ED5 /* LoginViewModel.swift in Sources */,
+				8D64752C299185D000B74EAF /* ImageService.swift in Sources */,
 				8D647529299153DA00B74EAF /* PersonView.swift in Sources */,
 				8D0228CF298FED9C00952ED5 /* ArchitecturesSwiftUIApp.swift in Sources */,
-				8D64752529913BCD00B74EAF /* NetworkingManager.swift in Sources */,
+				8D647532299195CB00B74EAF /* ImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
