@@ -21,6 +21,13 @@
 		8D64751429901FAA00B74EAF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D64751329901FAA00B74EAF /* FirebaseAuth */; };
 		8D64751629901FAA00B74EAF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D64751529901FAA00B74EAF /* FirebaseFirestore */; };
 		8D6475182990202900B74EAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D6475172990202900B74EAF /* GoogleService-Info.plist */; };
+		8D64751B299138B200B74EAF /* UIAplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64751A299138B200B74EAF /* UIAplication+.swift */; };
+		8D64751D2991397300B74EAF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64751C2991397300B74EAF /* HomeViewModel.swift */; };
+		8D64751F29913A1300B74EAF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64751E29913A1300B74EAF /* Person.swift */; };
+		8D64752129913A4300B74EAF /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64752029913A4300B74EAF /* PersonService.swift */; };
+		8D64752529913BCD00B74EAF /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64752429913BCD00B74EAF /* NetworkingManager.swift */; };
+		8D6475272991500300B74EAF /* PersonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6475262991500300B74EAF /* PersonRow.swift */; };
+		8D647529299153DA00B74EAF /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D647528299153DA00B74EAF /* PersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,13 @@
 		8D64750D29901C1E00B74EAF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		8D64751029901EC300B74EAF /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
 		8D6475172990202900B74EAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8D64751A299138B200B74EAF /* UIAplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAplication+.swift"; sourceTree = "<group>"; };
+		8D64751C2991397300B74EAF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8D64751E29913A1300B74EAF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8D64752029913A4300B74EAF /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		8D64752429913BCD00B74EAF /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		8D6475262991500300B74EAF /* PersonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRow.swift; sourceTree = "<group>"; };
+		8D647528299153DA00B74EAF /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,8 @@
 			children = (
 				8D0228CE298FED9C00952ED5 /* ArchitecturesSwiftUIApp.swift */,
 				8D64750D29901C1E00B74EAF /* AppState.swift */,
+				8D64752329913BC100B74EAF /* Utilities */,
+				8D6475192991389B00B74EAF /* Extensions */,
 				8D64750F29901EAF00B74EAF /* Services */,
 				8D0228E7298FEF4E00952ED5 /* Models */,
 				8D0228DC298FEDAC00952ED5 /* Core */,
@@ -103,7 +119,10 @@
 		8D0228DD298FEDAF00952ED5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8D64751C2991397300B74EAF /* HomeViewModel.swift */,
 				8D0228E3298FEDC700952ED5 /* HomeView.swift */,
+				8D6475262991500300B74EAF /* PersonRow.swift */,
+				8D647528299153DA00B74EAF /* PersonView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -123,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				8D0228E8298FEF5500952ED5 /* Credentials.swift */,
+				8D64751E29913A1300B74EAF /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,8 +159,25 @@
 			isa = PBXGroup;
 			children = (
 				8D64751029901EC300B74EAF /* CredentialService.swift */,
+				8D64752029913A4300B74EAF /* PersonService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8D6475192991389B00B74EAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8D64751A299138B200B74EAF /* UIAplication+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8D64752329913BC100B74EAF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8D64752429913BCD00B74EAF /* NetworkingManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,14 +259,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D0228E9298FEF5600952ED5 /* Credentials.swift in Sources */,
+				8D64751D2991397300B74EAF /* HomeViewModel.swift in Sources */,
 				8D64750C298FF6CF00B74EAF /* TextFieldViewModifier.swift in Sources */,
 				8D0228E2298FEDBF00952ED5 /* RegisterView.swift in Sources */,
+				8D6475272991500300B74EAF /* PersonRow.swift in Sources */,
 				8D64750E29901C1E00B74EAF /* AppState.swift in Sources */,
 				8D0228E4298FEDC700952ED5 /* HomeView.swift in Sources */,
+				8D64751F29913A1300B74EAF /* Person.swift in Sources */,
 				8D0228E0298FEDB900952ED5 /* LoginView.swift in Sources */,
 				8D64751129901EC300B74EAF /* CredentialService.swift in Sources */,
+				8D64751B299138B200B74EAF /* UIAplication+.swift in Sources */,
+				8D64752129913A4300B74EAF /* PersonService.swift in Sources */,
 				8D0228E6298FEF3200952ED5 /* LoginViewModel.swift in Sources */,
+				8D647529299153DA00B74EAF /* PersonView.swift in Sources */,
 				8D0228CF298FED9C00952ED5 /* ArchitecturesSwiftUIApp.swift in Sources */,
+				8D64752529913BCD00B74EAF /* NetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

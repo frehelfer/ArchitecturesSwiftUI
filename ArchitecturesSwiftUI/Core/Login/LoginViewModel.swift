@@ -15,8 +15,6 @@ class LoginViewModel: ObservableObject {
     @Published var presentError: Bool = false
     @Published var showProgressView = false
     
-    private var credentialService = CredentialService.shared
-    
     init() { }
     
     public func signIn(completionHandler: @escaping(Bool) -> Void) {
@@ -27,7 +25,7 @@ class LoginViewModel: ObservableObject {
         
         showProgressView = true
         
-        credentialService.signIn(user: credentials) { [weak self] result in
+        CredentialService.shared.signIn(user: credentials) { [weak self] result in
             switch result {
             case .success(_):
                 completionHandler(true)
@@ -52,7 +50,7 @@ class LoginViewModel: ObservableObject {
         
         showProgressView = true
         
-        credentialService.createUser(user: credentials) { [weak self] result in
+        CredentialService.shared.createUser(user: credentials) { [weak self] result in
             switch result {
             case .success(_):
                 completionHandler(true)
